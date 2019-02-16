@@ -82,7 +82,7 @@ $(document).ready(function() {
   }
 
   function handleTaskSubmitRequest(event) {
-    event.stopImmediatePropagation();
+    event.preventDefault();
 
     var taskTitle = $(this).find('[name="title"]').val();
     var taskContent = $(this).find('[name="content"]').val();
