@@ -128,6 +128,7 @@ $(document).ready(function() {
     var taskContent = $(this).find('[name="content"]').val();
 
     var requestUrl = apiRoot + 'tasks';
+	request.open('POST', requestUrl, false);
 
     $.ajax({
       url: requestUrl,
