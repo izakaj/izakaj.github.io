@@ -143,8 +143,8 @@ $(document).ready(function() {
         if(data.status === 200) {
           getAllTasks();
         }
-		request.open('POST', requestUrl, false);
       }
+	  return false;
     });
   }
 
