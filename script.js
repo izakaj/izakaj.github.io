@@ -1,6 +1,6 @@
 $(document).ready(function() {
-  const apiRoot = 'http://localhost:8080/v1/task/';
-  const trelloApiRoot = 'http://localhost:8080/v1/trello/';
+  const apiRoot = 'https://stormy-retreat-46110.herokuapp.com/v1/tasks/';
+  const trelloApiRoot = 'https://stormy-retreat-46110.herokuapp.com/v1/trello/';
   const datatableRowTemplate = $('[data-datatable-row-template]').children()[0];
   const $tasksContainer = $('[data-tasks-container]');
 
@@ -12,7 +12,7 @@ $(document).ready(function() {
   getAllTasks();
 
   function getAllAvailableBoards(callback, callbackArgs) {
-    var requestUrl = trelloApiRoot + 'getTrelloBoards';
+    var requestUrl = trelloApiRoot + 'boards';
 
     $.ajax({
       url: requestUrl,
@@ -63,7 +63,7 @@ $(document).ready(function() {
   }
 
   function getAllTasks() {
-    const requestUrl = apiRoot + 'getTasks';
+    const requestUrl = apiRoot + 'boards';
 
     $.ajax({
       url: requestUrl,
@@ -108,7 +108,7 @@ $(document).ready(function() {
   function handleTaskDeleteRequest() {
     var parentEl = $(this).parents('[data-task-id]');
     var taskId = parentEl.attr('data-task-id');
-    var requestUrl = apiRoot + 'deleteTask';
+    var requestUrl = apiRoot + '';
 
     $.ajax({
       url: requestUrl + '/?' + $.param({
@@ -127,7 +127,7 @@ $(document).ready(function() {
     var taskTitle = $(this).find('[name="title"]').val();
     var taskContent = $(this).find('[name="content"]').val();
 
-    var requestUrl = apiRoot + 'createTask';
+    var requestUrl = apiRoot + 'cards';
 
     $.ajax({
       url: requestUrl,
