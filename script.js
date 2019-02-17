@@ -76,6 +76,7 @@ $(document).ready(function() {
 
         getAllAvailableBoards(handleDatatableRender, tasks);
       }
+	  return false;
     });
   }
 
@@ -144,7 +145,6 @@ $(document).ready(function() {
           getAllTasks();
         }
       }
-	  return false;
     });
   }
 
