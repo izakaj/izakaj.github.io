@@ -87,7 +87,7 @@ $(document).ready(function() {
     var requestUrl = apiRoot + 'tasks';
 
     $.ajax({
-      url: requestUrl,
+      url: requestUrl + '/' + taskId,
       method: "PUT",
       processData: false,
       contentType: "application/json; charset=utf-8",
